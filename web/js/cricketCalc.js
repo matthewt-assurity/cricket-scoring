@@ -1,5 +1,5 @@
-var scorecard=0;
-var score=0
+var scorecard="";
+var score=0;
 
 /**
     @param {String} key
@@ -7,8 +7,8 @@ var score=0
     The key must be numeric or a '.'.
 */
 function enter(key) { 
-    scorecard = key;
-    document.getElementById('scorecard').innerHTML = scorecard
+    scorecard = scorecard + key;
+    document.getElementById('scorecard').innerHTML = scorecard;
     if (key != '.') score = score + key;
     document.getElementById('score').innerHTML = score;
 }
@@ -19,7 +19,7 @@ function enter(key) {
 function backspace() {
     var previousBall = scorecard.charAt(scorecard.length - 1);
     score = score - previousBall;
-    scorecard = scorecard.substring(0, scorecard.length);
+    scorecard = scorecard.substring(0, scorecard.length - 1);
     document.getElementById('scorecard').innerHTML = scorecard;
     document.getElementById('score').innerHTML = score;
 }
