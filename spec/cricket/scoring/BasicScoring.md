@@ -45,5 +45,5 @@ Then the Score Card should show '[2..34](- "?=#result.card")' and the Total Runs
 
 ### [Example - Amending a mistake when the previous ball was a dot (.)](- "amend-dot")
 Given I entered '[2.](- "#entry")' at the [start](- "startInnings(#entry)") of an innings and I should have entered '21'<br/>
-When I erase the last [.](- "eraseLastnEntries(#TEXT)") entries and enter '[1](- "#result = enterScore(#TEXT)")'<br/>
+When I erase the last [1](- "eraseLastnEntries(#TEXT)") entry and enter '[1](- "#result = enterScore(#TEXT)")'<br/>
 Then the Score Card should show '[21](- "?=#result.card")' and the Total Runs Scored should show '[3](- "?=#result.score")'.
